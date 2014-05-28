@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+<!--  Servlets -->
+	<servlet>
+		<servlet-name>ApplicationFootprints</servlet-name>
+		<servlet-class>hr.fer.zemris.berger.securebankingweb.ApplicationFootprintsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Communication</servlet-name>
+		<servlet-class>hr.fer.zemris.berger.securebankingweb.CommunicationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Transactions</servlet-name>
+		<servlet-class>hr.fer.zemris.berger.securebankingweb.TransactionsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>hr.fer.zemris.berger.securebankingweb.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Logout</servlet-name>
+		<servlet-class>hr.fer.zemris.berger.securebankingweb.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdminPanel</servlet-name>
+		<servlet-class>hr.fer.zemris.berger.securebankingweb.AdminPanelServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Versions</servlet-name>
+		<servlet-class>hr.fer.zemris.berger.securebankingweb.VersionsServlet</servlet-class>
+	</servlet>
+	
+	
+	
+	
+	<!-- Pomoćni servlet -->
+	
+	<servlet>
+		<servlet-name>CreateUser</servlet-name>
+		<servlet-class>hr.fer.zemris.berger.securebankingweb.CreateUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateUser</servlet-name>
+		<url-pattern>/create</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<!--  Servlet mappings -->
+	<servlet-mapping>
+		<servlet-name>ApplicationFootprints</servlet-name>
+		<url-pattern>/application_footprints</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Communication</servlet-name>
+		<url-pattern>/communication</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Transactions</servlet-name>
+		<url-pattern>/transactions</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminPanel</servlet-name>
+		<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Versions</servlet-name>
+		<url-pattern>/versions/*</url-pattern>
+	</servlet-mapping>
+	
+	<!--  Welcome pages -->
+	<welcome-file-list>
+		<welcome-file>WEB-INF/admin_panel.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- Error pages - not working? -->
+	<error-page>
+    	<error-code>404</error-code>
+    	<location>WEB-INF/404.jsp</location>
+	</error-page>
+</web-app>
