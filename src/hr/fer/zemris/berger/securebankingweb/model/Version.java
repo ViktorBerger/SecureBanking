@@ -21,12 +21,25 @@ public class Version {
 	private String version;
 	/** message digest of the current version of application. */
 	private String hash;
+	/** application signature. */
+	private String signature;
 
-	public Version(String version, String hash) {
+	/**
+	 * Creates new version record of the application.
+	 * 
+	 * @param version
+	 *            current version
+	 * @param hash
+	 *            application message digest
+	 * @param signature
+	 *            application signature
+	 */
+	public Version(String version, String hash, String signature) {
 		this.version = version;
 		this.hash = hash;
+		this.signature = signature;
 	}
-	
+
 	public Long getId() {
 		return this.id;
 	}
@@ -45,6 +58,14 @@ public class Version {
 
 	public void setHash(String hash) {
 		this.hash = hash;
+	}
+
+	public String getSignature() {
+		return signature;
+	}
+
+	public void setSignature(String signature) {
+		this.signature = signature;
 	}
 
 	@Override

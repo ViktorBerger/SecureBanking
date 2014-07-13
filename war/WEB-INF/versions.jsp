@@ -15,7 +15,9 @@
 			<tr>
 				<th>#</th>
 				<th>Version</th>
-				<th colspan="2">Hash</th>
+				<th>Hash</th>
+				<th>Signature</th>
+				<th></th>
 			</tr>
 			</thead>
 			<tbody>
@@ -25,6 +27,7 @@
 					<td><c:out value="${rowNumber.count}" /></td>
 					<td><c:out value="${version.version}" /></td>
 					<td><c:out value="${version.hash}" /></td>
+					<td><c:out value="${version.signature}" /></td>
 					<td><a href="/versions/remove?id=<c:out value="${version.id}"/>"><span class="glyphicon glyphicon-remove"></span></a></td>
 				</tr>
 			</c:forEach>

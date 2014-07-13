@@ -11,18 +11,23 @@
 			<legend>Add new version</legend>
 			<form method="POST" action="/versions">
 				  <div class="form-group">
-				    <label for="version">Email address</label>
+				    <label for="version">Version</label>
 				    <input type="text" class="form-control" name="version"
 										placeholder="version id" required>
 				  </div>
 				  <div class="form-group">
-				    <label for="hash">Password</label>
+				    <label for="hash">Hash</label>
 				    <input type="text" class="form-control" name="hash"
 										placeholder="hash" required>
 				  </div>
+				  <div class="form-group">
+				    <label for="signature">Signature</label>
+				    <input type="text" class="form-control" name="signature"
+										placeholder="signature" required>
+				  </div>
 				
 				
-				  <button type="submit" class="btn btn-default">Submit</button>
+				  <button type="submit" class="btn btn-default">Add</button>
 				</form>
 		</div>
 

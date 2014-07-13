@@ -6,8 +6,9 @@ import hr.fer.zemris.berger.securebankingweb.model.Footprint;
 import hr.fer.zemris.berger.securebankingweb.model.Version;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -35,14 +36,17 @@ public class ApplicationFootprintsServlet extends HttpServlet {
 
 		// fetch versions with corresponding hashes
 		List<Version> versions = VersionDao.getAll();
-		List<String> hashList = new ArrayList<>();
+
+		// maps signatures to corresponding hashes
+		Map<String, String> sigHashMap = new HashMap<>();
 
 		for (Version version : versions) {
-			hashList.add(version.getHash());
+			sigHashMap.put(version.getSignature(), version.getHash());
 		}
 
 		for (Footprint footprint : footprints) {
-			if (!hashList.contains(footprint.getHash())) {
+			String hash = sigHashMap.get(footprint.getSignature());
+			if (hash == null || !hash.equals(footprint.getHash())) {
 				footprint.setValid(false);
 			} else {
 				footprint.setValid(true);

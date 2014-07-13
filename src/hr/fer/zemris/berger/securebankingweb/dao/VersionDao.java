@@ -23,9 +23,9 @@ public class VersionDao {
 	 * @param hash
 	 *            message digest of the current version application
 	 */
-	public static void add(String version, String hash) {
+	public static void add(String version, String hash, String signature) {
 		EntityManager em = EMFService.get().createEntityManager();
-		Version ver = new Version(version, hash);
+		Version ver = new Version(version, hash, signature);
 		em.persist(ver);
 		em.close();
 	}

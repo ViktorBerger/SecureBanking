@@ -8,6 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Admin panel controller.
+ * @author Viktor Berger
+ * @version 1.0
+ */
 @SuppressWarnings("serial")
 public class AdminPanelServlet extends HttpServlet{
 

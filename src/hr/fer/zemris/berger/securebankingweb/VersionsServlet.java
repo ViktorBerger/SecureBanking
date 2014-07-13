@@ -14,6 +14,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Handling version of the application.
+ * 
+ * @author Viktor Berger
+ * @version 1.0
+ */
 @SuppressWarnings("serial")
 public class VersionsServlet extends HttpServlet {
 
@@ -34,8 +40,9 @@ public class VersionsServlet extends HttpServlet {
 
 		String version = req.getParameter("version");
 		String hash = req.getParameter("hash");
+		String signature = req.getParameter("signature");
 
-		VersionDao.add(version, hash);
+		VersionDao.add(version, hash, signature);
 
 		resp.sendRedirect("/versions/show");
 	}
